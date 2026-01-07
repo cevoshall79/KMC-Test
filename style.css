@@ -675,6 +675,32 @@ h1, h2, h3 {
     box-sizing: border-box;  /* Ensures padding doesn't add to width */
     overflow: hidden;        /* Clips any runaway elements */
 }
+/* Mobile Menu Styling */
+.mobile-nav {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: var(--color-primary); /* Use your Navy blue */
+    position: absolute;
+    top: 70px; /* Sits right below the header */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* When the "active" class is added by JavaScript */
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Oswald', sans-serif;
+}
 
 .logo-text {
     font-size: 1.2rem;       /* Shrink text so it doesn't push right */
@@ -686,4 +712,5 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 
