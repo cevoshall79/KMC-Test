@@ -652,3 +652,38 @@ h1, h2, h3 {
 }
 * { outline: 1px solid red !important; }
 
+
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none !important; /* Forces it to occupy zero space */
+        visibility: hidden;
+    }
+    
+    .logo {
+        max-width: 70%; /* Gives the logo space but stops it from pushing out */
+    }
+}
+
+
+.header {
+    width: 100%;             /* Changed from 100vw to 100% */
+    max-width: 100%;        /* Prevents it from expanding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;      /* Reduced padding for mobile */
+    box-sizing: border-box;  /* Ensures padding doesn't add to width */
+    overflow: hidden;        /* Clips any runaway elements */
+}
+
+.logo-text {
+    font-size: 1.2rem;       /* Shrink text so it doesn't push right */
+    white-space: nowrap;     /* Prevents name from wrapping awkwardly */
+}
+
+/* Ensure images don't exceed screen width */
+img {
+    max-width: 100%;
+    height: auto;
+}
