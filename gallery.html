@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Kitsap Mustang Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    
+    <style>
+        /* 1. Prevent Logo Wrapping */
+        .logo-text {
+            font-family: 'Oswald', sans-serif;
+            white-space: nowrap;
+            font-size: 1.2rem; /* Adjust if needed to fit your nav */
+        }
+
+        /* 2. Circular Logo Fix (85% Size) */
+        .logo-circle-container {
+            width: 255px; 
+            height: 255px;
+            margin: 20px auto 0;
+            background-color: white;
+            border-radius: 50%;
+            overflow: hidden; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #eee;
+        }
+
+        .logo-circle-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.25); /* Zoom to fill circle edges */
+        }
+
+        /* 3. Hero Section Height Adjustment */
+        .gallery-hero {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 30px 20px; /* Shorter height */
+            text-align: center;
+        }
+        .gallery-hero h1 {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo"><span class="logo-text">KITSAP MUSTANG CLUB</span></div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="show.html">Mustangs on the Waterfront</a>
+            <a href="events.html">Events & Calendar</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="charities.html">Charities</a>
+            <a href="scholarship.html">Scholarship</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+        <a href="membership.html" class="cta-button nav-cta">JOIN NOW</a>
+        <div class="hamburger" id="hamburger-menu">☰</div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-menu-links">
+        <a href="index.html">Home</a>
+        <a href="show.html">Mustangs on the Waterfront</a>
+        <a href="events.html">Events & Calendar</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="charities.html">Charities</a>
+        <a href="scholarship.html">Scholarship</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="membership.html" class="cta-button full-width">JOIN NOW</a>
+    </nav>
+
+    <main>
+        <section class="gallery-hero">
+            <h1>PHOTO GALLERY</h1>
+            <p>Capturing the cars, the cruises, and the community.</p>
+        </section>
+
+        <section class="container" style="padding: 50px 20px;">
+            <div class="gallery-hub-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                
+                <div class="folder-card" style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+                    <div class="logo-circle-container">
+                        <img src="images/gallery/previews/show-preview.jpg" alt="Waterfront Show">
+                    </div>
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="color: var(--color-primary);">Mustangs on the Waterfront</h3>
+                        <a href="gallery-show.html" class="cta-button secondary-cta" style="display: block; margin-top: 15px;">OPEN FOLDER</a>
+                    </div>
+                </div>
+
+                <div class="folder-card" style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+                    <div class="logo-circle-container">
+                        <img src="images/gallery/previews/cruise-preview.jpg" alt="Cruises">
+                    </div>
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="color: var(--color-primary);">Parades & Cruises</h3>
+                        <a href="gallery-cruises.html" class="cta-button secondary-cta" style="display: block; margin-top: 15px;">OPEN FOLDER</a>
+                    </div>
+                </div>
+
+                <div class="folder-card" style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+                    <div class="logo-circle-container">
+                        <img src="images/gallery/previews/installation-preview.jpg" alt="Installation Dinners">
+                    </div>
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="color: var(--color-primary);">Installation Dinners</h3>
+                        <a href="gallery-installation.html" class="cta-button secondary-cta" style="display: block; margin-top: 15px;">OPEN FOLDER</a>
+                    </div>
+                </div>
+
+                <div class="folder-card" style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+                    <div class="logo-circle-container">
+                        <img src="images/gallery/previews/christmas-preview.jpg" alt="Christmas Parties">
+                    </div>
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="color: var(--color-primary);">Christmas Parties</h3>
+                        <a href="gallery-christmas.html" class="cta-button secondary-cta" style="display: block; margin-top: 15px;">OPEN FOLDER</a>
+                    </div>
+                </div>
+
+                <div class="folder-card" style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd;">
+                    <div class="logo-circle-container">
+                        <img src="images/gallery/previews/miscellaneous-preview.jpg" alt="Miscellaneous">
+                    </div>
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="color: var(--color-primary);">Miscellaneous</h3>
+                        <a href="gallery-miscellaneous.html" class="cta-button secondary-cta" style="display: block; margin-top: 15px;">OPEN FOLDER</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <p>Kitsap Mustang Club</p>
+            <p>P.O. BOX 866, Tracyton, WA 98393</p>
+            <a href="mailto:mustangs@kitsapmustangclub.org">Email Club Contact</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/groups/106682512693518/about/" target="_blank">Facebook (Club)</a>
+            <a href="https://www.facebook.com/people/Mustangs-on-the-Waterfront/100063755520425/" target="_blank">Facebook (Show)</a>
+        </div>
+    </footer>
+    <button id="backToTop" title="Go to top">↑</button>
+</body>
+</html>

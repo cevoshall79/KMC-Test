@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Kitsap Mustang Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+    	<div class="logo">
+            <span class="logo-text">KITSAP MUSTANG CLUB</span>
+    	</div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="show.html">Mustangs on the Waterfront</a>
+            <a href="events.html">Events & Calendar</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="charities.html">Charities</a>
+            <a href="scholarship.html">Scholarship</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+	    <a href="gallery.html">Gallery</a>
+        </nav>
+        <a href="membership.html" class="cta-button nav-cta">JOIN NOW</a>
+        <div class="hamburger" id="hamburger-menu">☰</div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-menu-links">
+        <a href="index.html">Home</a>
+        <a href="show.html">Mustangs on the Waterfront</a>
+        <a href="events.html">Events & Calendar</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="charities.html">Charities</a>
+        <a href="scholarship.html">Scholarship</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+	<a href="gallery.html">Gallery</a>
+        <a href="membership.html" class="cta-button full-width">JOIN NOW</a>
+    </nav>
+    
+    <main class="container" style="padding-top: 40px;">
+
+        <h1 style="text-align: center; font-size: 2.8em; margin-bottom: 10px;">GET IN TOUCH</h1>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1em;">
+            Whether you have questions about membership, events, or sponsoring our club, we're ready to hear from you!
+        </p>
+
+        <section class="contact-details-grid">
+            
+            <div class="info-block">
+                <h2 style="color: var(--color-secondary); margin-bottom: 15px;">Email & Phone</h2>
+                
+                <div class="contact-item">
+                    <p class="contact-label">General Club Inquiries</p>
+                    <p class="contact-value"><a href="mailto:mustangs@kitsapmustangclub.org" class="secondary-link" style="display: inline;">mustangs@kitsapmustangclub.org</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <p class="contact-label">Mustangs on the Waterfront / Show Inquiries</p>
+                    <p class="contact-value"><a href="mailto:mustangsonthewaterfront@gmail.com" class="secondary-link" style="display: inline;">mustangsonthewaterfront@gmail.com</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <p class="contact-label">KMC Club Phone (Voicemail)</p>
+                    <p class="contact-value"><a href="tel:+13605551234" class="secondary-link" style="display: inline;">(360) 555-1234</a></p>
+                </div>
+
+                <h2 style="color: var(--color-secondary); margin-top: 40px; margin-bottom: 15px;">Mailing Address</h2>
+                <div class="contact-item">
+                    <p class="contact-value">
+                        Kitsap Mustang Club<br>
+                        P.O. BOX 866<br>
+                        Tracyton, WA 98393
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-block form-placeholder">
+                <h2 style="color: var(--color-primary); margin-bottom: 20px;">Send Us a Message</h2>
+                <form action="#" method="POST" style="background-color: var(--color-white); padding: 25px; border-radius: 8px;">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <p class="note">**NOTE:** This is a placeholder form. Please use the email addresses above to contact the club directly.</p>
+                    <button type="submit" class="cta-button primary-cta full-width-btn" disabled>Send Message (Disabled)</button>
+                </form>
+            </div>
+        </section>
+
+        <div style="height: 50px;"></div> </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <p>Kitsap Mustang Club</p>
+            <p>P.O. BOX 866, Tracyton, WA 98393</p>
+            <a href="mailto:mustangs@kitsapmustangclub.org">Email Club Contact</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/groups/106682512693518/about/" target="_blank">Facebook (Club)</a>
+            <a href="https://www.facebook.com/people/Mustangs-on-the-Waterfront/100063755520425/" target="_blank">Facebook (Show)</a>
+        </div>
+    </footer>
+
+</body>
+</html>

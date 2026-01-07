@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitsap Mustang Club - Events & Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height: 'auto', // Auto-adjusts height
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,listWeek' // Month view and Mobile-friendly List view
+                },
+                // --- ADMIN: EDIT THIS ARRAY TO CHANGE EVENTS ---
+                events: [
+                   
+ 		    { title: 'New Years Day Cruise', start: '2026-01-01T10:00:00', end: '2026-01-01T13:00:00', color: '#12284b', description: 'East Bremerton, Parking lot between Cloverleaf Bar and Aceituno’s Mexican Restaurant on Wheaten Way.' },
+		    { title: 'KMC Board Meeting', start: '2026-01-13T18:30:00', end: '2026-01-13T19:30:00', color: '#12284b', description: 'Monthly planning meeting at Tony\'s Pizza.' },
+                    { title: 'Installation Dinner', start: '2026-01-31T18:00:00', end: '2026-01-31T20:00:00', color: '#C0C0C0', description: 'Annual dinner and awards at Clearwater Casino. RSVP required. Setup 4:00PM, Bar 5:00PM, Dinner 6:00PM' },
+		    { title: 'KMC Board Meeting', start: '2026-02-10T18:30:00', end: '2026-02-10T19:30:00', color: '#12284b', description: 'Monthly planning meeting at Tony\'s Pizza.' },
+		    { title: 'KMC Membership Meeting', start: '2026-02-27T19:00:00', end: '2026-02-27T20:00:00', color: '#E35205', description: 'VFW Hall #239, 190 Dora Ave, Bremerton. All members welcome!' },
+		    { title: 'KMC Board Meeting', start: '2026-03-10T18:30:00', end: '2026-03-10T19:30:00', color: '#12284b', description: 'Monthly planning meeting at Tony\'s Pizza.' },
+		    { title: 'KMC Membership Meeting', start: '2026-03-27T19:00:00', end: '2026-03-27T20:00:00', color: '#E35205', description: 'VFW Hall #239, 190 Dora Ave, Bremerton. All members welcome!' },
+                    { title: '**Placeholder** Spring Cruise to Olympic National Park', start: '2026-04-10', end: '2026-04-12', color: '#12284b', description: 'Weekend drive. Meet at 8 AM Saturday.' },
+                    { title: '**Placeholder** Mustangs on the Waterfront', start: '2026-07-27', color: '#E35205', description: 'Our biggest show! Register now on the show page.' },
+                ],
+                // Simple event pop-up for testing
+                eventClick: function(info) {
+                    alert('Event: ' + info.event.title + 
+                          '\nDate: ' + info.event.start.toLocaleDateString() + 
+                          '\nDetails: ' + info.event.extendedProps.description);
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+    	<div class="logo">
+            <span class="logo-text">KITSAP MUSTANG CLUB</span>
+    	</div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="show.html">Mustangs on the Waterfront</a>
+            <a href="events.html">Events & Calendar</a>
+            <a href="sponsors.html">Sponsors</a>
+            <a href="charities.html">Charities</a>
+            <a href="scholarship.html">Scholarship</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+	    <a href="gallery.html">Gallery</a>
+        </nav>
+        <a href="membership.html" class="cta-button nav-cta">JOIN NOW</a>
+        <div class="hamburger" id="hamburger-menu">☰</div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-menu-links">
+        <a href="index.html">Home</a>
+        <a href="show.html">Mustangs on the Waterfront</a>
+        <a href="events.html">Events & Calendar</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="charities.html">Charities</a>
+        <a href="scholarship.html">Scholarship</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+	<a href="gallery.html">Gallery</a>
+        <a href="membership.html" class="cta-button full-width">JOIN NOW</a>
+    </nav>
+    
+    <main class="container" style="padding-top: 40px;">
+        <h1 style="text-align: center; margin-bottom: 5px;">Events & Calendar</h1>
+        <p style="text-align: center; margin-bottom: 30px;">View our general meetings, parades, cruises, and the annual show. Use the List button for a mobile-friendly schedule!</p>
+        
+        <div id='calendar'></div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <p>Kitsap Mustang Club</p>
+            <p>P.O. BOX 866, Tracyton, WA 98393</p>
+            <a href="mailto:mustangs@kitsapmustangclub.org">Email Club Contact</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/groups/106682512693518/about/" target="_blank">Facebook (Club)</a>
+            <a href="https://www.facebook.com/people/Mustangs-on-the-Waterfront/100063755520425/" target="_blank">Facebook (Show)</a>
+        </div>
+    </footer>
+
+</body>
+</html>

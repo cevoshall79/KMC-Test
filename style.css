@@ -1,0 +1,639 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --color-primary: #12284b; /* Deep Navy Blue */
+    --color-secondary: #E35205; /* Competition Orange for CTA */
+    --color-accent: #C0C0C0; /* Metallic Silver/Chrome */
+    --color-light: #F4F4F4; /* Light Gray Background */
+    --color-white: #FFFFFF;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    color: var(--color-primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Buttons & CTAs --- */
+.cta-button {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Prevents button text from wrapping */
+}
+
+.primary-cta {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 1.2em;
+    padding: 15px 30px;
+}
+.primary-cta:hover { background-color: #ff6a1a; }
+
+.small-cta {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+.small-cta:hover { background-color: #ff6a1a; }
+
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo-text { font-family: var(--font-heading); font-size: 1.4em; }
+
+.desktop-nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 0.95em;
+    padding-bottom: 2px;
+}
+.desktop-nav a:hover, .desktop-nav a.active { 
+    color: var(--color-secondary); 
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.hamburger {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
+}
+
+/* Mobile Nav Styles */
+.mobile-nav {
+    display: none; /* Controlled by JS */
+    position: absolute;
+    top: 60px; /* Below the header */
+    left: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    z-index: 999;
+    padding: 10px 20px;
+    flex-direction: column;
+}
+.mobile-nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav .full-width {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.nav-cta {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    margin-left: 20px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 60vh; /* Responsive height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+.hero::before { /* Dark overlay for text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    color: var(--color-white);
+    max-width: 90%;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: var(--color-white);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.secondary-link {
+    color: var(--color-accent);
+    margin-top: 15px;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+}
+.secondary-link:hover { text-decoration: underline; }
+
+/* --- Card Grid --- */
+.card-grid {
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-top: -80px; /* Pulls the cards up into the hero section slightly */
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    flex: 1; 
+    min-width: 280px; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.card.dark {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+.card.dark h3 {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+/* --- Next Event Highlight --- */
+.next-event {
+    background-color: var(--color-light);
+    padding: 40px 20px;
+    border-top: 2px solid var(--color-accent);
+    text-align: center;
+}
+.next-event h2 {
+    margin-bottom: 20px;
+}
+.event-details {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px dashed var(--color-accent);
+    border-radius: 5px;
+}
+.event-meta p {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.event-description {
+    margin: 15px 0;
+}
+
+/* --- FullCalendar Overrides (Visual Polish) --- */
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.fc .fc-toolbar-title {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    color: var(--color-primary);
+}
+.fc .fc-button-primary {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+.fc .fc-button-primary:not(:disabled):hover {
+    background-color: #ff6a1a;
+    border-color: #ff6a1a;
+}
+.fc-list-event-title a { color: var(--color-primary); }
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-primary); /* Changed to primary color for better branding */
+    color: var(--color-white);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+}
+
+.footer-links a, .social-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-right: 15px;
+}
+.footer-links p { margin-bottom: 5px; }
+
+
+/* --- Mobile Responsiveness (Media Queries) --- */
+@media (max-width: 850px) {
+    .desktop-nav, .nav-cta {
+        display: none; 
+    }
+    .hamburger {
+        display: block; 
+    }
+    .hero {
+        height: 50vh;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero h2 {
+        font-size: 1em;
+    }
+    .card-grid {
+        flex-direction: column; 
+        margin-top: 0; /* Remove negative margin on mobile */
+        padding-top: 20px;
+    }
+    .card {
+        min-width: 100%;
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .social-links {
+        margin-top: 10px;
+    }
+
+    /* FullCalendar mobile adjustments */
+    .fc .fc-toolbar-title { font-size: 1.2em; }
+    .fc .fc-toolbar-chunk:last-child {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+/* --- Show Page Specific Styles --- */
+.details-grid {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+.detail-block {
+    flex: 1;
+    min-width: 45%;
+    padding: 20px;
+    border: 1px solid var(--color-light);
+    border-radius: 5px;
+}
+.detail-block h3 {
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+.detail-block ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+.detail-block li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23E35205"/></svg>') no-repeat left 6px;
+    background-size: 8px;
+    padding-left: 18px;
+    margin-bottom: 5px;
+}
+
+.info-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .details-grid {
+        flex-direction: column;
+    }
+}
+
+/* --- About Page Specific Styles --- */
+.two-col-text {
+    display: flex;
+    gap: 30px;
+}
+.two-col-text .column {
+    flex: 1;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+.benefit-card {
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+.benefit-card h3 {
+    color: var(--color-primary);
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .two-col-text {
+        flex-direction: column;
+    }
+}
+
+/* --- Contact Page Specific Styles --- */
+.contact-details-grid {
+    display: flex;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.info-block {
+    flex: 1;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 3px solid var(--color-secondary);
+}
+.contact-label {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.9em;
+}
+.contact-value {
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+.contact-value a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Form Styling (Placeholder) */
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    font-family: var(--font-body);
+}
+.full-width-btn {
+    width: 100%;
+    pointer-events: none; /* Disable click on the button */
+    opacity: 0.6;
+}
+.note {
+    font-size: 0.8em;
+    color: #cc0000;
+    margin-bottom: 10px;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .contact-details-grid {
+        flex-direction: column;
+    }
+}
+
+/* --- Community Pages Specific Styles (Charities & Scholarship) --- */
+.charity-grid {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.charity-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.charity-card .charity-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+    margin-bottom: 15px;
+}
+
+.scholarship-details-block {
+    display: flex;
+    gap: 40px;
+    padding: 30px 0;
+}
+.scholarship-details-block .criteria-section {
+    flex: 1;
+    padding: 20px;
+    border: 1px dashed var(--color-accent);
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .scholarship-details-block {
+        flex-direction: column;
+    }
+}
+
+/* Add this to the bottom of your style.css */
+.logo img {
+    max-height: 70px; /* Adjust this number to make the header logo fit perfectly */
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* Slight grow effect when hovering */
+}
+
+/* Adjust spacing to fit the new links */
+.desktop-nav {
+    display: flex;
+    gap: 12px; /* Reduced gap from 20px to 12px to save space */
+}
+
+.desktop-nav a {
+    font-size: 0.9rem; /* Slightly smaller font to ensure it fits on one line */
+    white-space: nowrap; /* Prevents links from breaking into two lines */
+}
+
+/* Hide the 'Join Now' text on medium screens if it gets too tight */
+@media (max-width: 1100px) {
+    .nav-cta {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+.sponsor-card img {
+    max-width: 75%;
+    height: 75px;       /* Keeps all logos at a consistent height */
+    object-fit: contain; /* Ensures the logo isn't stretched; adds padding if needed */
+    transition: transform 0.3s ease;
+}
+
+.sponsor-card img:hover {
+    transform: scale(1.05); /* Gives a nice "pop" when hovered */
+}
+
+.photo-card {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-card:hover {
+    transform: scale(1.03);
+}
+
+.photo-card img {
+    transition: opacity 0.3s ease;
+}
+
+.photo-card:hover img {
+    opacity: 0.9;
+}
+
+/* Navigation Spacing Refinement */
+.desktop-nav {
+    display: flex;
+    gap: 10px; /* Tightened gap to fit 9 links */
+}
+
+.desktop-nav a {
+    font-size: 0.85rem; /* Slightly smaller font for high-density menu */
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustment for mid-sized screens */
+@media (max-width: 1200px) {
+    .header {
+        padding: 10px 15px;
+    }
+    .desktop-nav {
+        gap: 8px;
+    }
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
+#backToTop {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: var(--color-primary); /* Competition Orange */
+    color: white; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 50%; /* Circular button */
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+    background-color: var(--color-secondary); /* Navy Blue */
+    transform: scale(1.1);
+}
+
+.logo-text {
+    font-size: 1.2rem; /* Reduced from the standard large size */
+    font-weight: bold;
+    white-space: nowrap; /* Forces the text to stay on one single line */
+    letter-spacing: -0.5px; /* Pulls letters slightly closer to save horizontal space */
+    display: inline-block;
+}
+
+/* Optional: If the desktop nav is still pushing it, 
+   we can give the links slightly less room */
+.desktop-nav a {
+    margin: 0 8px; /* Reduces space between "Home", "Events", etc. */
+    font-size: 0.95rem; 
+}
