@@ -1,3 +1,15 @@
+/* Prevent horizontal overflow and fix box sizing */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* --- Global Reset & Variables --- */
 :root {
     --color-primary: #12284b; /* Deep Navy Blue */
@@ -639,3 +651,4 @@ h1, h2, h3 {
 
 }
 * { outline: 1px solid red !important; }
+
