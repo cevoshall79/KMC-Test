@@ -49,4 +49,19 @@ if (mybutton) {
             behavior: 'smooth'
         });
     };
+
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-menu');
+    const mobileMenu = document.getElementById('mobile-menu-links');
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            
+            // Optional: Change ☰ to ✕ when open
+            hamburger.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    }
+});
