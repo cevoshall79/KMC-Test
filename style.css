@@ -714,3 +714,13 @@ img {
 }
 
 
+.cta-button, .primary-cta, .nav-cta {
+    width: auto !important;      /* Allow it to shrink */
+    max-width: 90vw !important;  /* Never wider than 90% of the screen */
+    white-space: normal !important; /* Allow text to wrap to a second line */
+    word-wrap: break-word;       /* Break long words if necessary */
+    display: inline-block;       /* Let it sit naturally */
+    text-align: center;
+    padding: 12px 20px;          /* Comfortable touch size */
+}
+
