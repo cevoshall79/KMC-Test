@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
+<style>
+    /* This forces the border even if the CSS file is failing */
+    * { 
+        outline: 2px solid red !important; 
+        box-sizing: border-box !important;
+    }
+    
+    /* This forces the screen to stay put */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+</style>
+	
 </head>
 <body>
 
@@ -96,4 +113,5 @@
     </footer>
 
 </body>
+
 </html>
