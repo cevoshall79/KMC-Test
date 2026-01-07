@@ -636,4 +636,6 @@ h1, h2, h3 {
 .desktop-nav a {
     margin: 0 8px; /* Reduces space between "Home", "Events", etc. */
     font-size: 0.95rem; 
+
 }
+* { outline: 1px solid red !important; }
